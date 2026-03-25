@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Manrope',sans-serif}
+body{background:#0b0b0c;color:#fff;overflow-x:hidden}
+
+/* ── Page entrance animation ── */
+body{opacity:0;animation:pageIn .6s ease forwards .05s}
+@keyframes pageIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+header{position:fixed;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:rgba(0,0,0,.5);backdrop-filter:blur(12px);z-index:1000;transition:.3s}
+header.scrolled{padding:12px 60px;background:rgba(0,0,0,.8)}
+.logo{font-weight:700;text-decoration:none;color:#fff}
+nav a{margin-left:30px;text-decoration:none;color:#fff;opacity:.6;transition:.3s}
+nav a:hover{opacity:1}
+
+/* ── Hero ── */
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:radial-gradient(circle at center,#1a1a1d,#0b0b0c)}
+.hero h1{font-size:64px;opacity:0;transform:translateY(30px);animation:fadeUp 1s forwards .4s}
+.link-btn{margin-top:40px;font-size:18px;color:#fff;cursor:pointer;opacity:0;transform:translateY(30px);animation:fadeUp 1s forwards .7s;text-decoration:none;position:relative}
+.link-btn::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:1px;background:#fff;transition:.3s}
+.link-btn:hover::after{width:100%}
+
+/* ── Sections ── */
+section{padding:120px 60px;max-width:1000px;margin:auto;background:radial-gradient(circle at center,#1a1a1d,#0b0b0c)}
+h2{font-size:36px;margin-bottom:40px}
+.text{line-height:1.8;opacity:.85;white-space:pre-line}
+
+/* ── Contacts ── */
+.contacts{display:flex;gap:20px;align-items:center}
+.icon{width:32px;height:32px;opacity:.7;transition:.3s;fill:#fff;display:block}
+.icon:hover{opacity:1;transform:scale(1.1)}
+.icon svg{width:32px;height:32px}
+
+footer{display:none}
+
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+/* ── Team page ── */
+.team{padding:140px 20px 120px;text-align:center}
+.team h1{font-size:40px;margin-bottom:60px;opacity:0;animation:fadeUp .8s forwards .3s}
+
+.cards{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  border-radius:20px;
+  padding:20px;
+  width:260px;
+  transition:transform 0.35s ease, border 0.35s ease, box-shadow 0.35s ease;
+  opacity:0;
+  transform:translateY(30px);
+  border:1px solid transparent;
+}
+.card:nth-child(1){animation:fadeUp .8s forwards .4s}
+.card:nth-child(2){animation:fadeUp .8s forwards .55s}
+.card:nth-child(3){animation:fadeUp .8s forwards .7s}
+.card:hover{
+  transform:scale(1.05);
+  border:1px solid rgba(255,255,255,0.25);
+  box-shadow:0 0 24px rgba(255,255,255,0.07), 0 8px 32px rgba(0,0,0,0.4);
+}
+.card img{width:100%;border-radius:15px}
+.card h2{margin-top:15px;font-size:20px}
+.desc{margin-top:10px;font-weight:500}
+.sub{font-size:14px;opacity:0.7;margin-top:5px}
+.tg{display:inline-block;margin-top:15px}
+.tg svg{width:30px;height:30px;fill:#fff;opacity:.7;transition:.3s}
+.tg svg:hover{opacity:1;transform:scale(1.2)}
+
+/* ── Bio page ── */
+section.bio-section{padding-top:140px;opacity:0;animation:fadeUp .8s forwards .3s}
+section.bio-section h2{opacity:0;animation:fadeUp .8s forwards .4s}
+section.bio-section .text{opacity:0;animation:fadeUp .8s forwards .55s}
+
+@media(max-width:768px){
+  header{padding:20px}
+  .hero h1{font-size:36px}
+  section{padding:80px 20px}
+}
+
+/* ── Lessons page ── */
+.lessons-page{padding:140px 60px 120px;max-width:1100px;margin:auto}
+.lessons-title{font-size:40px;opacity:0;animation:fadeUp .8s forwards .3s}
+.lessons-subtitle{font-size:16px;margin-top:12px;color:rgba(255,255,255,0.5);opacity:0;animation:fadeUp .8s forwards .45s}
+
+.lesson-cards{display:flex;flex-wrap:wrap;gap:32px;margin-top:60px}
+
+.lesson-card{
+  display:flex;
+  gap:24px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  border-radius:20px;
+  padding:24px;
+  border:1px solid transparent;
+  transition:transform .35s ease, border .35s ease, box-shadow .35s ease;
+  opacity:0;
+  animation:fadeUp .8s forwards .55s;
+  max-width:680px;
+}
+.lesson-card:hover{
+  transform:scale(1.02);
+  border:1px solid rgba(255,255,255,0.2);
+  box-shadow:0 0 24px rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.lesson-thumb{flex-shrink:0;width:180px}
+.lesson-thumb img{width:100%;border-radius:12px;display:block}
+
+.lesson-info{display:flex;flex-direction:column;gap:10px;justify-content:center}
+.lesson-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.5}
+.lesson-name{font-size:20px;font-weight:700;line-height:1.3}
+.lesson-desc{font-size:14px;line-height:1.7;opacity:.7}
+
+.yt-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:4px;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  opacity:.8;
+  transition:.3s;
+  width:fit-content;
+}
+.yt-link svg{width:26px;height:26px;fill:#fff;flex-shrink:0}
+.yt-link:hover{opacity:1;transform:translateX(3px)}
+
+@media(max-width:600px){
+  .lesson-card{flex-direction:column}
+  .lesson-thumb{width:100%}
+  .lessons-page{padding:120px 20px 80px}
+}
